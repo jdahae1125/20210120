@@ -5,17 +5,17 @@ from .models import Members
 # Create your views here.
 def gu(request):
     num = request.GET.get('num', '')
-    return HttpResponse(f"<h1> gugu : {num}</h2>")
+
+    return HttpResponse(f"<h1> gugu : {num_gugu(num)}</h2>")
 
 def num_gugu(num):
-    return int(num)
+    str = " "
+    for i in range(9):
+        str += f"{int(num)} * {i+1} = {int(num) * (i + 1)} <br>"
+    return str
 
 def index(req):
     print(dir(req))
-    print(request.GET.get('id',''))
-    num = request.GET.get('id','')
-        if len(num) < 1:
-            return HttpResponse("<h1>version 1 : dynamic page</h1>")
     return HttpResponse("<h2> 구구단 : {gugu(num)} </h2>")
 
 def test(req):
