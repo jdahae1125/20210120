@@ -8,7 +8,11 @@ def index(req):
     return HttpResponse("Hello World")
 
 def test(req):
-    return HttpResponse("<h2>Test</h2>")
+    return HttpResponse("<h2>Test 두번째</h2>")
+
+def git(req):
+    return HttpResponse("<h2>git version</h2>")
+
 
 def signup(req):
     if req.method == 'POST' :
